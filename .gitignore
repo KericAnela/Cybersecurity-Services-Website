@@ -1,0 +1,7 @@
+backend/config/config.php
+backend/vendor/
+backend/logs/*
+!backend/logs/.gitkeep
+.DS_Store
+.idea/
+.vscode/
