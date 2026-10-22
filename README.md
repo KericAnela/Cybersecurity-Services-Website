@@ -1,5 +1,3 @@
-# Cybersecurity-Services-Website
-
 # CyberGuard Legal: Cybersecurity Services Website
 
 ## Project Description
@@ -37,10 +35,6 @@ The platform implements Role-Based Access Control (RBAC) with three primary tier
 
 WIP
 
-```
-
-The application will be accessible at `http://localhost:5000`.
-
 ---
 
 ## API Documentation (Swagger)
@@ -49,7 +43,6 @@ WIP
 
 ---
 
-<!--
 ## Deployed Application
 
 WIP
