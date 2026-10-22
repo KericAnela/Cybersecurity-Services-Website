@@ -37,15 +37,6 @@ The platform implements Role-Based Access Control (RBAC) with three primary tier
 
 WIP
 
-### 5. Install Dependencies and Run
-
-```bash
-# Install dependencies
-npm install
-
-# Run the application in development mode
-npm run dev
-
 ```
 
 The application will be accessible at `http://localhost:5000`.
