@@ -1,0 +1,83 @@
+<div class="container px-4 px-lg-5 my-5">
+    <!-- Header -->
+    <div class="row gx-4 gx-lg-5 mb-4">
+        <div class="col-lg-8">
+            <h1 class="font-weight-light">System Control Center</h1>
+            <p class="lead text-muted">Manage platform users, system configurations, and security audit logs.</p>
+        </div>
+    </div>
+
+    <!-- System Status Overview Bar -->
+    <div class="row gx-4 gx-lg-5 mb-4">
+        <div class="col-12">
+            <div class="card bg-light border-0 shadow-sm p-3">
+                <div class="d-flex flex-wrap justify-content-between align-items-center">
+                    <span class="mb-2 mb-md-0"><strong>Scanner Engine:</strong> <span class="text-success">● Online</span></span>
+                    <span class="mb-2 mb-md-0"><strong>API Gateway Uptime:</strong> <span class="text-success">99.98%</span></span>
+                    <span class="mb-2 mb-md-0"><strong>Total Active Users:</strong> 1,248</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Split -->
+    <div class="row gx-4 gx-lg-5">
+        <!-- User Management Table Column -->
+        <div class="col-lg-8 mb-5">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="card-title h5 mb-0">User & Role Management</h4>
+                        <button class="btn btn-sm btn-primary">+ Add User</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sarah Jenkins</td>
+                                    <td>s.jenkins@company.com</td>
+                                    <td><span class="badge bg-primary">Admin</span></td>
+                                    <td><a href="#" class="small text-decoration-none">Edit</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Marcus Vance</td>
+                                    <td>m.vance@company.com</td>
+                                    <td><span class="badge bg-secondary">Analyst</span></td>
+                                    <td><a href="#" class="small text-decoration-none">Edit</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Audit Log Column -->
+        <div class="col-lg-4 mb-5">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <h4 class="card-title h5 mb-3">Global Audit Logs</h4>
+                        <div class="bg-dark text-light p-3 rounded small font-monospace" style="height: 200px; overflow-y: auto;">
+                            [14:25] User logged in: admin@sys<br>
+                            [14:10] Role updated: m.vance<br>
+                            [13:45] Firewall rule modified<br>
+                            [12:30] New client org registered
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-top">
+                        <a href="#logs" class="small text-decoration-none">View Full System Logs →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

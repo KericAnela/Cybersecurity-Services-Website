@@ -1,0 +1,77 @@
+<div class="container px-4 px-lg-5 my-5">
+    <!-- Header -->
+    <div class="row gx-4 gx-lg-5 mb-4">
+        <div class="col-lg-8">
+            <h1 class="font-weight-light">SOC Incident Queue</h1>
+            <p class="lead text-muted">Real-time triage and threat investigation workspace.</p>
+        </div>
+    </div>
+
+    <!-- Top Metric Counters -->
+    <div class="row gx-4 gx-lg-5 mb-4">
+        <div class="col-md-4 mb-3 mb-md-0">
+            <div class="card shadow-sm border-0 p-3">
+                <small class="text-muted">Unassigned Alerts</small>
+                <h3 class="h2 mb-0 text-danger">14</h3>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3 mb-md-0">
+            <div class="card shadow-sm border-0 p-3">
+                <small class="text-muted">Under Investigation</small>
+                <h3 class="h2 mb-0 text-warning">6</h3>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 p-3">
+                <small class="text-muted">Resolved Today</small>
+                <h3 class="h2 mb-0 text-success">23</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Triage Table -->
+    <div class="row gx-4 gx-lg-5">
+        <div class="col-12 mb-5">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="card-title h5 mb-0">Active Threat Triage</h4>
+                        <button class="btn btn-sm btn-secondary">Filter Alerts</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Timestamp</th>
+                                    <th>Threat / Event</th>
+                                    <th>Severity</th>
+                                    <th>Target Asset</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>14:22:01 UTC</td>
+                                    <td>Brute Force Login Attempt</td>
+                                    <td><span class="badge bg-danger">Critical</span></td>
+                                    <td>auth-service-01</td>
+                                    <td><span class="text-danger">Unassigned</span></td>
+                                    <td><button class="btn btn-sm btn-primary py-0 px-2">Assign to Me</button></td>
+                                </tr>
+                                <tr>
+                                    <td>13:58:12 UTC</td>
+                                    <td>SQL Injection Pattern Detected</td>
+                                    <td><span class="badge bg-warning text-dark">High</span></td>
+                                    <td>client-api-gateway</td>
+                                    <td><span class="text-warning">Investigating</span></td>
+                                    <td><button class="btn btn-sm btn-outline-secondary py-0 px-2">View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

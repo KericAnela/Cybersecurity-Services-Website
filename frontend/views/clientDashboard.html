@@ -1,0 +1,91 @@
+<div class="container px-4 px-lg-5 my-5">
+    <!-- Header / Greeting -->
+    <div class="row gx-4 gx-lg-5 mb-4 align-items-center">
+        <div class="col-lg-8">
+            <h1 class="font-weight-light">Welcome back, Acme Corp</h1>
+            <p class="lead text-muted">Here is an overview of your current security posture and open assets.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+            <button class="btn btn-outline-primary btn-sm">Request New Assessment</button>
+        </div>
+    </div>
+
+    <!-- Top Security Score Card -->
+    <div class="row gx-4 gx-lg-5 mb-4">
+        <div class="col-12">
+            <div class="card bg-dark text-white border-0 shadow-sm">
+                <div class="card-body p-4 d-flex flex-column flex-md-row justify-content-between align-items-center">
+                    <div>
+                        <h3 class="h5 mb-1 text-info">Overall Security Health Score</h3>
+                        <p class="text-muted small mb-0">Last evaluated during Q2 Penetration Test</p>
+                    </div>
+                    <div class="display-5 font-weight-bold text-success mt-2 mt-md-0">
+                        92 <span class="fs-5 text-muted">/ 100 (Low Risk)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="row gx-4 gx-lg-5">
+        <!-- Active Vulnerabilities Table Column -->
+        <div class="col-lg-8 mb-5">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h4 class="card-title h5 mb-3">Active Vulnerabilities</h4>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>CVE / ID</th>
+                                    <th>Severity</th>
+                                    <th>Asset</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CVE-2025-4812</td>
+                                    <td><span class="badge bg-danger">Critical</span></td>
+                                    <td>api.acmecorp.com</td>
+                                    <td><span class="text-warning">Open</span></td>
+                                </tr>
+                                <tr>
+                                    <td>CVE-2025-3921</td>
+                                    <td><span class="badge bg-warning text-dark">Medium</span></td>
+                                    <td>auth-portal</td>
+                                    <td><span class="text-warning">Open</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Reports Sidebar -->
+        <div class="col-lg-4 mb-5">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body p-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <h4 class="card-title h5 mb-4">Recent Reports</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-3 pb-2 border-bottom">
+                                <a href="#" class="text-decoration-none fw-bold d-block">Q2 Penetration Test Report.pdf</a>
+                                <small class="text-muted">Uploaded May 12, 2026</small>
+                            </li>
+                            <li class="mb-3 pb-2 border-bottom">
+                                <a href="#" class="text-decoration-none fw-bold d-block">External Vulnerability Scan.pdf</a>
+                                <small class="text-muted">Uploaded Apr 28, 2026</small>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 pt-3 border-top">
+                        <a href="#support" class="small text-decoration-none">Need help? Contact Account Manager</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

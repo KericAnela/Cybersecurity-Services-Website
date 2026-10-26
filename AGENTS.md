@@ -2,7 +2,7 @@
  
 ## Project
 Cybersecurity Services Website: A website where clients can purchase cybersecurity services and contact cybersecurity experts.
-Roles: admin, client. Entities: clients, services, vulnerabilities, engagements, security incidents.
+Roles: admin, analyst, client. Entities: users, services, consultations, regulatory updates, documents.
  
 ## Technology stack
 - Frontend: HTML, CSS, JavaScript, jQuery, Bootstrap 5, single-page application (SPA)
