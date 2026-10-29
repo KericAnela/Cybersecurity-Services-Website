@@ -1,25 +1,19 @@
 <?php
-require_once __DIR__ . '/BaseDao.php';
+require_once 'BaseDao.php';
 
 class UserDao extends BaseDao {
+    
     public function __construct() {
-        // Pass your table name to the parent BaseDao constructor
         parent::__construct('users');
     }
 
-    // Find a user by email
-    public function get_by_email($email) {
-        return $this->query_unique("SELECT * FROM users WHERE email = :email", ['email' => $email]);
-    }
-
-    // Find a user by username
-    public function get_by_username($username) {
-        return $this->query_unique("SELECT * FROM users WHERE username = :username", ['username' => $username]);
-    }
-
-    // Insert a new user
-    public function register_user($data) {
-        return $this->add([
+    // Create (POST)
+    public function create($data) {
+        $sql = "INSERT INTO users (full_name, email, username, password_hash, phone, account_type) 
+                VALUES (:full_name, :email, :username, :password_hash, :phone, :account_type)";
+        
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute([
             'full_name' => $data['full_name'],
             'email' => $data['email'],
             'username' => $data['username'],
@@ -27,6 +21,22 @@ class UserDao extends BaseDao {
             'phone' => $data['phone'] ?? null,
             'account_type' => $data['account_type']
         ]);
+        
+        return $this->connection->lastInsertId();
+    }
+
+    // Update (PUT/PATCH)
+    public function update($id, $data) {
+        $sql = "UPDATE users SET full_name = :full_name, email = :email, phone = :phone, account_type = :account_type 
+                WHERE id = :id";
+        
+        $stmt = $this->connection->prepare($sql);
+        return $stmt->execute([
+            'id' => $id,
+            'full_name' => $data['full_name'],
+            'email' => $data['email'],
+            'phone' => $data['phone'] ?? null,
+            'account_type' => $data['account_type']
+        ]);
     }
 }
-?>
