@@ -3,7 +3,7 @@ require_once __DIR__ . '/../../config/config.php';
 
 class BaseDao
 {
-    private static $connection = null;
+    protected static ?PDO $connection = null;
 
     protected $table_name;
     protected $columns;
@@ -53,14 +53,16 @@ class BaseDao
         return $stmt->rowCount();
     }
 
-    public function get_all()
-    {
-        return $this->query("SELECT * FROM {$this->table_name} ORDER BY id");
+    public function getAll(): array {
+        $stmt = self::connection()->prepare("SELECT * FROM {$this->table_name}");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function get_by_id($id)
-    {
-        return $this->query_unique("SELECT * FROM {$this->table_name} WHERE id = :id", ['id' => $id]);
+    public function getById($id) {
+        $stmt = self::connection()->prepare("SELECT * FROM {$this->table_name} WHERE id = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     /** INSERT INTO categories (name, description) VALUES (:name, :description) */
@@ -96,9 +98,9 @@ class BaseDao
         return $this->execute($query, $entity);
     }
 
-    public function delete($id)
-    {
-        return $this->execute("DELETE FROM {$this->table_name} WHERE id = :id", ['id' => $id]);
+    public function delete($id): bool {
+        $stmt = self::connection()->prepare("DELETE FROM {$this->table_name} WHERE id = ?");
+        return $stmt->execute([$id]);
     }
 
     protected function only_columns($entity)

@@ -1,19 +1,41 @@
 <?php
-require_once __DIR__ . '/BaseDao.php';
+require_once 'BaseDao.php';
 
 class ConsultationDao extends BaseDao {
+    
     public function __construct() {
         parent::__construct('consultations');
     }
 
-    // Get all consultations submitted by a specific user
-    public function get_by_user($user_id) {
-        return $this->query("SELECT * FROM consultations WHERE user_id = :user_id ORDER BY created_at DESC", ['user_id' => $user_id]);
+    // Create (POST)
+    public function create($data) {
+        $sql = "INSERT INTO consultations (user_id, service_id, status, scheduled_date, notes) 
+                VALUES (:user_id, :service_id, :status, :scheduled_date, :notes)";
+        
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute([
+            'user_id' => $data['user_id'],
+            'service_id' => $data['service_id'],
+            'status' => $data['status'] ?? 'Pending',
+            'scheduled_date' => $data['scheduled_date'],
+            'notes' => $data['notes'] ?? null
+        ]);
+        
+        return $this->connection->lastInsertId();
     }
 
-    // Update the status of a consultation case
-    public function update_status($id, $status) {
-        return $this->update($id, ['status' => $status]);
+    // Update (PUT/PATCH)
+    public function update($id, $data) {
+        $sql = "UPDATE consultations SET service_id = :service_id, status = :status, scheduled_date = :scheduled_date, notes = :notes 
+                WHERE id = :id";
+        
+        $stmt = $this->connection->prepare($sql);
+        return $stmt->execute([
+            'id' => $id,
+            'service_id' => $data['service_id'],
+            'status' => $data['status'],
+            'scheduled_date' => $data['scheduled_date'],
+            'notes' => $data['notes'] ?? null
+        ]);
     }
 }
-?>

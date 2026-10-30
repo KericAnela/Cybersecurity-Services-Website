@@ -11,6 +11,10 @@ $(document).ready(function() {
     app.route({ view: 'services', load: 'services.html' });
     app.route({ view: 'register', load: 'register.html' });
     app.route({ view: 'login', load: 'login.html' });
+    app.route({ view: 'forgotPassword', load: 'forgotPassword.html' });
+    app.route({ view: 'adminDashboard', load: 'adminDashboard.html' });
+    app.route({ view: 'analystDashboard', load: 'analystDashboard.html' });
+    app.route({ view: 'clientDashboard', load: 'clientDashboard.html' });
 
     app.run();
 
