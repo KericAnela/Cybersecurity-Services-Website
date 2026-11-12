@@ -16,6 +16,7 @@ define('API_BASE_URL', $scheme . '://' . $_SERVER['HTTP_HOST'] . $path);
 
 // swagger-php reads the attributes with reflection, so the documentation classes must be loaded first
 $files = array_merge([__DIR__ . '/doc_setup.php'], glob(__DIR__ . '/paths/*.php'));
+
 foreach ($files as $file) {
     require_once $file;
 }
