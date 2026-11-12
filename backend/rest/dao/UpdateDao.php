@@ -1,10 +1,14 @@
 <?php
-require_once 'BaseDao.php';
+require_once __DIR__ . '/BaseDao.php';
 
 class UpdateDao extends BaseDao {
     
     public function __construct() {
         parent::__construct('regulatory_updates');
+    }
+
+    public function get_all() {
+        return $this->getAll();
     }
 
     // Create (POST)
